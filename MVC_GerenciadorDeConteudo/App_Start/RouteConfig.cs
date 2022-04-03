@@ -16,8 +16,24 @@ namespace MVC_GerenciadorDeConteudo
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+
+            routes.MapRoute(
+                name: "Paginas",
+                url: "Paginas",
+                defaults: new { controller = "Paginas", action = "Index", id = UrlParameter.Optional });
+
+            routes.MapRoute(
+                    name: "Paginas_novo",
+                    url: "Paginas/novo",
+                    defaults: new { controller = "Paginas", action = "Novo", id = UrlParameter.Optional });
+
+
+            routes.MapRoute(
+                    name: "Paginas_criar",
+                    url: "Paginas/criar",
+                    defaults: new { controller = "Paginas", action = "Criar", id = UrlParameter.Optional });
+
         }
     }
 }
