@@ -52,5 +52,23 @@ namespace Database
 
             }
         }
+
+        public DataTable BuscaPorId(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(sqlConn()))
+
+            {
+                string queryString = "select * from tbpaginas where id =" + id;
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+
+                SqlDataAdapter adapter = new SqlDataAdapter();
+                adapter.SelectCommand = command;
+
+                DataTable table = new DataTable();
+                adapter.Fill(table);
+                return table;
+            }
+        }
     }
 }

@@ -34,6 +34,21 @@ namespace Business
             return lista;
         }
 
+        public static Pagina BuscaPorId(int id)
+        {
+
+            var pagina = new Pagina();
+            var paginaDb = new Database.Pagina();
+            foreach (DataRow row in paginaDb.BuscaPorId(id).Rows)
+            {
+                pagina.Id = Convert.ToInt32(row["id"]);
+                pagina.Nome = row["nome"].ToString();
+                pagina.Conteudo = row["conteudo"].ToString();
+                pagina.Data = Convert.ToDateTime(row["data"]);
+            }
+            return pagina;
+        }
+
         public void Save()
         {
             new Database.Pagina().Salvar(this.Id, this.Nome, this.Data, this.Conteudo);
