@@ -24,6 +24,7 @@
             <td>Nome</td>
             <td>Data</td>
             <td></td>
+            <td></td>
         </tr>
 
         @foreach (var p in paginas)
@@ -32,7 +33,8 @@
             <td>@p.Id</td>
             <td>@p.Nome</td>
             <td>@p.Data</td>            
-            <td><a href="/paginas/editar/@p.Id">Alterar dados</a></td>            
+            <td><a href="/paginas/editar/@p.Id" class="btn btn-primary">Alterar dados</a></td>            
+            <td><a href="/paginas/excluir/@p.Id" class="btn btn-danger" onclick="ValidaExclusao(@p.Id, event)" >Excluir dados</a></td>            
             </tr>    
             }
     </table>

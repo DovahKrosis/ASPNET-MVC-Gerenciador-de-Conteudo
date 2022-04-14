@@ -53,6 +53,19 @@ namespace Database
             }
         }
 
+        public void Excluir(int id)
+        {
+            using (SqlConnection connection = new SqlConnection(sqlConn()))
+
+            {
+                string queryString = "delete tbpaginas where id =" + id;              
+
+                SqlCommand command = new SqlCommand(queryString, connection);
+                command.Connection.Open();
+                command.ExecuteNonQuery();
+            }
+        }
+
         public DataTable BuscaPorId(int id)
         {
             using (SqlConnection connection = new SqlConnection(sqlConn()))

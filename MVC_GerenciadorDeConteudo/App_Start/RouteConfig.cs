@@ -39,6 +39,10 @@ namespace MVC_GerenciadorDeConteudo
                             url: "Paginas/alterar/{id}",
                             defaults: new { controller = "Paginas", action = "Alterar", id = 0 });
 
+            routes.MapRoute(name: "Paginas_excluir",
+                            url: "Paginas/excluir/{id}",
+                            defaults: new { controller = "Paginas", action = "Excluir", id = 0 });
+
         }
     }
 }

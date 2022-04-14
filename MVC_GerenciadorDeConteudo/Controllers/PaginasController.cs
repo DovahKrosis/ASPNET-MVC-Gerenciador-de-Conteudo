@@ -66,5 +66,10 @@ namespace MVC_GerenciadorDeConteudo.Controllers
                
             Response.Redirect("/paginas");
         }
+        public void Excluir(int id)
+        {
+            Pagina.Excluir(id);
+            Response.Redirect("/paginas");
+        }
     }
 }

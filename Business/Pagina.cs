@@ -53,5 +53,10 @@ namespace Business
         {
             new Database.Pagina().Salvar(this.Id, this.Nome, this.Data, this.Conteudo);
         }
+
+        public static void Excluir(int id)
+        {
+            new Database.Pagina().Excluir(id);
+        }
     }
 }
